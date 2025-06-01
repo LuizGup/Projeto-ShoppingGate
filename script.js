@@ -1,20 +1,28 @@
 const linhas = 5, colunas = 5;
 const estacionamento = Array.from({ length: linhas }, () => Array(colunas).fill(null));
-const prefixosNorte2 = {
-  AP: ['QUN', 'QUP', 'QUT'],
-  PA: ['JSA', 'JSB', 'JSC', 'NSB', 'NSC'],
-  RR: ['NAY', 'NBA', 'NBC']
-};
 const VALOR_FIXO = 10.00;
 const VALOR_EXTRA = 5.00;
 
+const faixas = {
+  AP: [['NEI', 'NFB'], ['QLN', 'QLT'], ['SAK', 'SAM']],
+  PA: [['JTA', 'JWE'], ['NSE', 'NTC'], ['OBT', 'OCA'], ['OFI', 'OFW'], ['OSW', 'OTZ'], ['RWK', 'RXD']],
+  RR: [['NAH', 'NBA'], ['NUH', 'NUL'], ['RZA', 'RZD']]
+};
+
+function inRange(prefix, start, end) {
+  return prefix >= start && prefix <= end;
+}
+
 function identificarEstado(placa) {
   const prefixo = placa.slice(0, 3).toUpperCase();
-  for (const estado in prefixosNorte2) {
-    if (prefixosNorte2[estado].includes(prefixo)) return estado;
+  for (const estado in faixas) {
+    if (faixas[estado].some(([inicio, fim]) => inRange(prefixo, inicio, fim))) {
+      return estado;
+    }
   }
   return null;
 }
+
 
 function renderizarEstacionamento() {
   const grid = document.getElementById('estacionamento');
