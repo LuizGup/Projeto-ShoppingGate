@@ -6,39 +6,50 @@ const VALOR_HORA_EXCEDENTE = 5.00;
 const TOLERANCIA_MINUTOS = 15;
 
 // Base de prefixos para estados da Equipe Norte 2 (Amapá, Pará, Roraima)
-const PREFIXOS_NORTE_2 = {
-    // Amapá (AP) - Exemplos
-    "QUN": "AP", "QUP": "AP", "QUT": "AP",
-    // Adicionar outros prefixos do Amapá aqui conforme a tabela oficial
-    "NEI": "AP", "NEJ": "AP", "NEK": "AP", "NEL": "AP", "NEM": "AP", "NEN": "AP", "NEO": "AP", "NEP": "AP", "NEQ": "AP", "NER": "AP", "NES": "AP", "NET": "AP", "NEU": "AP", "NEV": "AP", "NEW": "AP", "NEX": "AP", "NEY": "AP", "NEZ": "AP",
-    "NFA": "AP", "NFB": "AP",
-    "QLN": "AP", "QLO": "AP", "QLP": "AP", "QLQ": "AP", "QLR": "AP", "QLS": "AP", "QLT": "AP", // 2ª sequência
+const PREFIXOS_NORTE_2 = {};
 
-    // Pará (PA) - Exemplos
-    "JSA": "PA", "JSB": "PA", "JSC": "PA", // Exemplo do usuário, verificar se são válidos no Mercosul
-    "NSB": "PA", "NSC": "PA", // Exemplo do usuário, verificar se são válidos no Mercosul
-    // Prefixos oficiais (pode haver mais)
-    "JTA": "PA", "JTB": "PA", "JTC": "PA", "JTD": "PA", "JTE": "PA", "JTF": "PA", "JTG": "PA", "JTH": "PA", "JTI": "PA", "JTJ": "PA", "JTK": "PA", "JTL": "PA", "JTM": "PA", "JTN": "PA", "JTO": "PA", "JTP": "PA", "JTQ": "PA", "JTR": "PA", "JTS": "PA", "JTT": "PA", "JTU": "PA", "JTV": "PA", "JTW": "PA", "JTX": "PA", "JTY": "PA", "JTZ": "PA",
-    "JUA": "PA", "JUB": "PA", "JUC": "PA", "JUD": "PA", "JUE": "PA", "JUF": "PA", "JUG": "PA", "JUH": "PA", "JUI": "PA", "JUJ": "PA", "JUK": "PA", "JUL": "PA", "JUM": "PA", "JUN": "PA", "JUO": "PA", "JUP": "PA", "JUQ": "PA", "JUR": "PA", "JUS": "PA", "JUT": "PA", "JUU": "PA", "JUV": "PA", "JUW": "PA", "JUX": "PA", "JUY": "PA", "JUZ": "PA",
-    "JVA": "PA", "JVB": "PA", "JVC": "PA", "JVD": "PA", "JVE": "PA", "JVF": "PA", "JVG": "PA", "JVH": "PA", "JVI": "PA", "JVJ": "PA", "JVK": "PA", "JVL": "PA", "JVM": "PA", "JVN": "PA", "JVO": "PA", "JVP": "PA", "JVQ": "PA", "JVR": "PA", "JVS": "PA", "JVT": "PA", "JVU": "PA", "JVV": "PA", "JVW": "PA", "JVX": "PA", "JVY": "PA", "JVZ": "PA",
-    "JWA": "PA", "JWB": "PA", "JWC": "PA", "JWD": "PA", "JWE": "PA",
-    "NSE": "PA", "NSF": "PA", "NSG": "PA", "NSH": "PA", "NSI": "PA", "NSJ": "PA", "NSK": "PA", "NSL": "PA", "NSM": "PA", "NSN": "PA", "NSO": "PA", "NSP": "PA", "NSQ": "PA", "NSR": "PA", "NSS": "PA", "NST": "PA", "NSU": "PA", "NSV": "PA", "NSW": "PA", "NSX": "PA", "NSY": "PA", "NSZ": "PA", // 2ª sequência
-    "NTA": "PA", "NTB": "PA", "NTC": "PA",
-    "OBT": "PA", "OBU": "PA", "OBV": "PA", "OBW": "PA", "OBX": "PA", "OBY": "PA", "OBZ": "PA", "OCA": "PA", // 3ª sequência
-    "OFI": "PA", "OFJ": "PA", "OFK": "PA", "OFL": "PA", "OFM": "PA", "OFN": "PA", "OFO": "PA", "OFP": "PA", "OFQ": "PA", "OFR": "PA", "OFS": "PA", "OFT": "PA", "OFU": "PA", "OFV": "PA", "OFW": "PA", // 4ª sequência
-    "OSW": "PA", "OSX": "PA", "OSY": "PA", "OSZ": "PA", "OTA": "PA", "OTB": "PA", "OTC": "PA", "OTD": "PA", "OTE": "PA", "OTF": "PA", "OTG": "PA", "OTH": "PA", "OTI": "PA", "OTJ": "PA", "OTK": "PA", "OTL": "PA", "OTM": "PA", "OTN": "PA", "OTO": "PA", "OTP": "PA", "OTQ": "PA", "OTR": "PA", "OTS": "PA", "OTT": "PA", "OTU": "PA", "OTV": "PA", "OTW": "PA", "OTX": "PA", "OTY": "PA", "OTZ": "PA", // 5ª sequência
-    "QDA": "PA", "QDB": "PA", "QDC": "PA", "QDD": "PA", "QDE": "PA", "QDF": "PA", "QDG": "PA", "QDH": "PA", "QDI": "PA", "QDJ": "PA", "QDK": "PA", "QDL": "PA", "QDM": "PA", "QDN": "PA", "QDO": "PA", "QDP": "PA", "QDQ": "PA", "QDR": "PA", "QDS": "PA", "QDT": "PA", "QDU": "PA", "QDV": "PA", "QDW": "PA", "QDX": "PA", "QDY": "PA", "QDZ": "PA", // 6ª sequência
-    "RWK": "PA", "RWL": "PA", "RWM": "PA", "RWN": "PA", "RWO": "PA", "RWP": "PA", "RWQ": "PA", "RWR": "PA", "RWS": "PA", "RWT": "PA", "RWU": "PA", "RWV": "PA", "RWW": "PA", "RWX": "PA", "RWY": "PA", "RWZ": "PA", // Placa Mercosul nova
-    "RXA": "PA", "RXB": "PA", "RXC": "PA", "RXD": "PA", "RXE": "PA", "RXF": "PA", "RXG": "PA", "RXH": "PA", "RXI": "PA", "RXJ": "PA",
+// Função para gerar prefixos entre dois valores, como de "NEI" até "NFB"
+function gerarPrefixos(inicio, fim) {
+  const resultado = [];
+  let atual = inicio.toUpperCase();
 
-    // Roraima (RR) - Exemplos
-    "NAY": "RR", "NBA": "RR", "NBC": "RR", // Exemplo do usuário + Oficial
-    // Prefixos oficiais (pode haver mais)
-    "NAH": "RR", "NAI": "RR", "NAJ": "RR", "NAK": "RR", "NAL": "RR", "NAM": "RR", "NAN": "RR", "NAO": "RR", "NAP": "RR", "NAQ": "RR", "NAR": "RR", "NAS": "RR", "NAT": "RR", "NAU": "RR", "NAV": "RR", "NAW": "RR", "NAX": "RR",
-    "NUH": "RR", "NUI": "RR", "NUJ": "RR", "NUK": "RR", "NUL": "RR", // 2ª sequência
-    "QRB": "RR", // 3ª sequência
-    "RZA": "RR", "RZB": "RR", "RZC": "RR", "RZD": "RR", // Placa Mercosul nova
+  while (atual <= fim.toUpperCase()) {
+    resultado.push(atual);
+    atual = proximoPrefixo(atual);
+  }
+
+  return resultado;
+}
+
+// Incrementa uma string de 3 letras como contador base-26
+function proximoPrefixo(p) {
+  let [a, b, c] = p.split('').map(ch => ch.charCodeAt(0));
+  if (c < 90) c++;
+  else if (b < 90) { b++; c = 65; }
+  else if (a < 90) { a++; b = c = 65; }
+  else return null;
+  return String.fromCharCode(a, b, c);
+}
+
+// Faixas de prefixos por estado
+const faixas = {
+  AP: [["NEI", "NFB"], ["QLN", "QLT"], ["SAK", "SAM"], ["TGO", "TGQ"]],
+  PA: [["JTA", "JWE"], ["NSE", "NTC"], ["OBT", "OCA"], ["OFI", "OFW"],
+       ["OSW", "OTZ"], ["QDA", "QEZ"], ["QVA", "QVZ"], ["RWK", "RXJ"], ["SZA", "SZZ"]],
+  RR: [["RZA", "RZD"], ["NUH", "NUL"], ["NAH", "NBA"]]
 };
+
+// Gera e popula a variável PREFIXOS_NORTE_2
+for (const estado in faixas) {
+  for (const [inicio, fim] of faixas[estado]) {
+    const lista = gerarPrefixos(inicio, fim);
+    for (const prefixo of lista) {
+      PREFIXOS_NORTE_2[prefixo] = estado;
+    }
+  }
+}
+console.log(PREFIXOS_NORTE_2); // Exibe todos os prefixos gerados
+
 
 // Estruturas de Dados
 let matrizEstacionamento = [];
