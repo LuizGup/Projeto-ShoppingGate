@@ -1,0 +1,190 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 20px;
+  color: #333;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #1b5e20;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #1b5e20;
+}
+
+.form-section {
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.time-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input[type="number"] {
+  width: 80px;
+}
+
+input[type="text"] {
+  width: 150px;
+  text-transform: uppercase;
+}
+
+button {
+  padding: 10px 15px;
+  background: #1b5e20;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #2e7d32;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.vaga {
+  height: 60px;
+  background: #e8f5e9;
+  border: 1px solid #81c784;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.vaga.ocupado {
+  background: #ffcdd2;
+  border-color: #e57373;
+  color: #d32f2f;
+}
+
+.mensagem {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+}
+
+.mensagem.erro {
+  display: block;
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+.mensagem.sucesso {
+  display: block;
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+.ticket-container {
+  background: #fff;
+  border: 1px dashed #1b5e20;
+  padding: 20px;
+  border-radius: 5px;
+  font-family: 'Courier New', monospace;
+  min-height: 150px;
+}
+
+.ticket-header {
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.ticket-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.ticket-footer {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  font-weight: bold;
+}
+
+.estado-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.estado-ap {
+  background: #bbdefb;
+  color: #0d47a1;
+}
+
+.estado-pa {
+  background: #c8e6c9;
+  color: #1b5e20;
+}
+
+.estado-rr {
+  background: #fff9c4;
+  color: #f57f17;
+}
+
+.estado-outro {
+  background: #e0e0e0;
+  color: #616161;
+}
+
+@media (max-width: 600px) {
+  .input-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  input[type="text"], 
+  .time-inputs {
+    width: 100%;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

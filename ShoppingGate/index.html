@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Estacionamento - Norte 2</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Gerenciador de Estacionamento - Norte 2 (AP, PA, RR)</h1>
+
+  <section class="form-section">
+    <h2>Entrada de Veículo</h2>
+    <div class="input-group">
+      <input id="placaEntrada" type="text" placeholder="Placa (LLLNLNN)" maxlength="7">
+      <div class="time-inputs">
+        <input id="horaEntrada" type="number" placeholder="Hora (0-23)" min="0" max="23">
+        <input id="minutoEntrada" type="number" placeholder="Minuto (0-59)" min="0" max="59">
+      </div>
+    </div>
+    <button onclick="registrarEntrada()">Registrar Entrada</button>
+    <div id="mensagemEntrada" class="mensagem"></div>
+  </section>
+
+  <section class="form-section">
+    <h2>Saída de Veículo</h2>
+    <div class="input-group">
+      <input id="placaSaida" type="text" placeholder="Placa (LLLNLNN)" maxlength="7">
+      <div class="time-inputs">
+        <input id="horaSaida" type="number" placeholder="Hora (0-23)" min="0" max="23">
+        <input id="minutoSaida" type="number" placeholder="Minuto (0-59)" min="0" max="59">
+      </div>
+    </div>
+    <button onclick="registrarSaida()">Registrar Saída</button>
+    <div id="mensagemSaida" class="mensagem"></div>
+  </section>
+
+  <section class="form-section">
+    <h2>Estacionamento</h2>
+    <div id="estacionamento" class="grid"></div>
+  </section>
+
+  <section class="form-section ticket-section">
+    <h2>Ticket</h2>
+    <div id="ticket" class="ticket-container"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
