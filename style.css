@@ -45,7 +45,28 @@ input {
 }
 
 input[type="number"] {
-  width: 80px;
+  width: 110px;
+}
+
+.Header {
+  animation: slideDown 2s ease forwards;
+
+}
+
+#entrada{
+  animation: slideSideLeft 2s ease forwards;
+}
+
+#saida{
+  animation: slideSideRight 2s ease forwards;
+}
+
+#Estacionamento{
+  animation: slideSideLeft 2s ease forwards;
+}
+
+#ticketSection{
+  animation: slideUp 2s ease forwards;
 }
 
 input[type="text"] {
@@ -186,5 +207,46 @@ button:hover {
   
   .grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideSideLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideSideRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }

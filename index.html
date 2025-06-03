@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Gerenciador de Estacionamento - Norte 2 (AP, PA, RR)</h1>
+  <h1 class="Header">Gerenciador de Estacionamento - Norte 2 (AP, PA, RR)</h1>
 
-  <section class="form-section">
+  <section class="form-section" id="entrada">
     <h2>Entrada de Veículo</h2>
     <div class="input-group">
       <input id="placaEntrada" type="text" placeholder="Placa (LLLNLNN)" maxlength="7">
@@ -22,7 +22,7 @@
     <div id="mensagemEntrada" class="mensagem"></div>
   </section>
 
-  <section class="form-section">
+  <section class="form-section" id="saida">
     <h2>Saída de Veículo</h2>
     <div class="input-group">
       <input id="placaSaida" type="text" placeholder="Placa (LLLNLNN)" maxlength="7">
@@ -35,12 +35,12 @@
     <div id="mensagemSaida" class="mensagem"></div>
   </section>
 
-  <section class="form-section">
+  <section class="form-section" id="Estacionamento">
     <h2>Estacionamento</h2>
     <div id="estacionamento" class="grid"></div>
   </section>
 
-  <section class="form-section ticket-section">
+  <section class="form-section ticket-section" id="ticketSection">
     <h2>Ticket</h2>
     <div id="ticket" class="ticket-container"></div>
   </section>
