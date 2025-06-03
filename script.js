@@ -49,6 +49,7 @@ for (const estado in faixas) {
   }
 }
 console.log(PREFIXOS_NORTE_2); // Exibe todos os prefixos gerados
+console.log(Object.keys(PREFIXOS_NORTE_2).length); // Total de prefixos únicos
 
 
 // Estruturas de Dados
@@ -387,5 +388,7 @@ function exibirMensagem(elemento, texto, tipo) {
 
 // Inicializa o sistema quando a página carregar
 window.onload = function() {
+    const grid = document.getElementById("estacionamento");
+    grid.style.gridTemplateColumns = `repeat(${COLUNAS_MATRIZ}, 1fr)`;
     inicializarMatriz();
 };
