@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  background: linear-gradient(to bottom, #0A233F, #1E4A7D);
   padding: 20px;
   color: #333;
   max-width: 1200px;
@@ -9,10 +9,10 @@ body {
 
 h1 {
   text-align: center;
-  color: #1b5e20;
+  color: #ffffff;
   margin-bottom: 30px;
   padding-bottom: 10px;
-  border-bottom: 2px solid #1b5e20;
+  border-bottom: 2px solid #ffffff;
 }
 
 .form-section {
@@ -55,7 +55,7 @@ input[type="text"] {
 
 button {
   padding: 10px 15px;
-  background: #1b5e20;
+  background: linear-gradient(to right, #1E4A7D, #0A233F);
   color: white;
   border: none;
   border-radius: 5px;
@@ -116,7 +116,7 @@ button:hover {
 
 .ticket-container {
   background: #fff;
-  border: 1px dashed #1b5e20;
+  border: 1px dashed #1E4A7D;
   padding: 20px;
   border-radius: 5px;
   font-family: 'Courier New', monospace;
